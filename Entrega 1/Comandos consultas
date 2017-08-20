@@ -1,0 +1,15 @@
+mongo -- para iniciar la consola
+show dbs -- para ver las bases de datos y su estado
+use icccualquiercosa -- para usar esa colección en las operaciones
+show collections -- para ver las colecciones
+mongoexport --host localhost --db carga_icc1002 --collection icccualquiercosa -csv --out tweets_b.csv --fields text,timestamp_ms -- para exportar los datos como un archivo csv
+db.icccualquiercosa.find() -- para ver todos los tweets descargados
+db.icccualquiercosa.findOne() -- para ver el primer tweet de la lista
+db.icccualquiercosa.count({"retweeted_status.retweet_count": {$gt: 1000}}) --Para vr los tweet con retweets mayores a 1000
+db.icccualquiercosa.count({"created_at": {$gt: "Mon May 20 00:00:00 +0000 2016", $lt: "Sun May 30 00:00:00 +0000 2017"}}) -- para ver los tweets en el rango de un año
+db.icccualquiercosa.count({"user.location": "New York"}) -- para ver la cantidad de tweets por ciudad
+
+
+
+
+
