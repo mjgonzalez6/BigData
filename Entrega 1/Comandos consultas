@@ -8,6 +8,11 @@ db.icccualquiercosa.findOne() -- para ver el primer tweet de la lista
 db.icccualquiercosa.count({"retweeted_status.retweet_count": {$gt: 1000}}) --Para vr los tweet con retweets mayores a 1000
 db.icccualquiercosa.count({"created_at": {$gt: "Mon May 20 00:00:00 +0000 2016", $lt: "Sun May 30 00:00:00 +0000 2017"}}) -- para ver los tweets en el rango de un año
 db.icccualquiercosa.count({"user.location": "New York"}) -- para ver la cantidad de tweets por ciudad
+db.icccualquiercosa.ensureIndex({"_id":1}) -- Comando para configurar un índice por id del tweet
+db.icccualquiercosa.ensureIndex({"_id":1,"retweeted_status.retweet_count": -1}) --Comando para configurar el índice por id y por la cantidad de retweets.
+
+
+
 
 
 
